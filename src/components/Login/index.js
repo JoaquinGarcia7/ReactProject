@@ -12,7 +12,7 @@ import React, { Component } from 'react';
 
 class Login extends Component {
 	static propTypes = {
-		
+		 
     }    
 
     constructor(props){ //Almacena los datos
@@ -24,7 +24,17 @@ class Login extends Component {
 	}
 
 	componentDidMount = () => { //Se ejecuta después que la salida del componente ha sido renderizada en el DOM
-		axios.post(`https://dev-backend.medicosonline.app/api/patient/login`).then(res =>{
+        /*
+        GET solicita una representación del recurso especificado. Las solicitudes que usan GET solo deben recuperar datos.
+        PUT crea un nuevo elemento o reemplaza una representación del elemento de destino con los datos de la petición.
+        POST envía datos al servidor. El tipo del cuerpo de la solicitud es indicada por la cabecera  Content-Type.
+        
+        La diferencia entre el método PUT y el método POST es que PUT es un método idempotente: llamarlo una o más veces de
+        forma sucesiva tiene el mismo efecto (sin efectos secundarios), mientras que una sucesión de peticiones POST idénticas
+        pueden tener efectos adicionales, como envíar una orden varias veces.
+        */
+        
+        axios.post(`https://dev-backend.medicosonline.app/api/patient/login`).then(res =>{
             console.log('res', res);
         });
     }
